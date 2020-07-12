@@ -25,13 +25,10 @@ def do_run():
 	hd = HistoricalData()
 	hd.Load('dal')
 	hd.CalculateReturns()
-	dates = hd.GetDatesForReturns()
-	vol_dates = hd.GetDatesForVolatility(n)
-	volatility = hd.CalculateHistoricalVolatility(n)
 	periods = [10,20,30,60,90,120,150,180]
-	#hd.ClosePlots()
-	#hd.PlotVolatilities(*periods)
-	#hd.ShowPlots()
+	hd.ClosePlots()
+	hd.PlotVolatilities(*periods)
+	hd.ShowPlots()
 	hd.ShowCurrentHistoricalVolatilities(*periods)
 	
 if __name__ == "__main__":
